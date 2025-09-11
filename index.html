@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Harga Produk - GFR Store</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        :root {
+            --primary-color: #00bfff;
+            --accent-color: #25d366;
+            --bg-color: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --text-color: #ffffff;
+            --text-secondary: #888;
+            --border-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--bg-color), var(--bg-secondary));
+            color: var(--text-color);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: var(--text-secondary);
+        }
+
+        .product-list-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .product-category {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin: 20px 0;
+        }
+        
+        .product-item {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-name {
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+        .product-price {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .product-code {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+        }
+
+        .footer-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .whatsapp-link {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .product-category {
+                font-size: 1.2em;
+            }
+
+            .product-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🛒 DAFTAR HARGA PRODUK 🛒</h1>
+            <p>Harga terupdate dan siap dipesan otomatis.</p>
+        </header>
+
+        <main class="product-list-container">
+            <h3 class="product-category">Paket Utama</h3>
+            <ul>
+                <li class="product-item">
+                    <div class="product-details">
+                        <span class="product-name">SuperMini PROMO</span>
+                        <span class="product-code">(XLA14)</span>
+                    </div>
+                    <span class="product-price">Rp 45.000</span>
+                </li>
+                <li class="product-item">
+                    <div class="product-details">
+                        <span class="product-name">mini</span>
+                        <span class="product-code">(XLA32)</span>
+                    </div>
+                    <span class="product-price">Rp 56.000</span>
+                </li>
+                <li class="product-item">
+                    <div class="product-details">
+                        <span class="product-name">big</span>
+                        <span class="product-code">(XLA39)</span>
+                    </div>
+                    <span class="product-price">Rp 61.000</span>
+                </li>
+                <li class="product-item">
+                    <div class="product-details">
+                        <span class="product-name">jumbo v2</span>
+                        <span class="product-code">(XLA51)</span>
+                    </div>
+                    <span class="product-price">Rp 71.000</span>
+                </li>
+                <li class="product-item">
+                    <div class="product-details">
+                        <span class="product-name">JUMBO</span>
+                        <span class="product-code">(XLA65)</span>
+                    </div>
+                    <span class="product-price">Rp 84.000</span>
+                </li>
+                <li class="product-item">
+                    <div class="product-details">
+                        <span class="product-name">MegaBig</span>
+                        <span class="product-code">(XLA89)</span>
+                    </div>
+                    <span class="product-price">Rp 93.000</span>
+                </li>
+            </ul>
+
+            <h3 class="product-category">Bekasan/harian L (25GB)</h3>
+            <ul>
+                <li class="product-item">
+                    <span class="product-name">3 hari</span>
+                    <span class="product-price">Rp 9.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">5 hari</span>
+                    <span class="product-price">Rp 11.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">7 hari</span>
+                    <span class="product-price">Rp 14.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">9 hari</span>
+                    <span class="product-price">Rp 16.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">11 hari</span>
+                    <span class="product-price">Rp 18.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">13 hari</span>
+                    <span class="product-price">Rp 20.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">15 hari</span>
+                    <span class="product-price">Rp 22.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">17 hari</span>
+                    <span class="product-price">Rp 24.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">19 hari</span>
+                    <span class="product-price">Rp 26.000</span>
+                </li>
+            </ul>
+            
+            <h3 class="product-category">Bekasan/harian XL (39GB)</h3>
+            <ul>
+                <li class="product-item">
+                    <span class="product-name">3 hari</span>
+                    <span class="product-price">Rp 11.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">5 hari</span>
+                    <span class="product-price">Rp 13.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">7 hari</span>
+                    <span class="product-price">Rp 16.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">9 hari</span>
+                    <span class="product-price">Rp 18.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">11 hari</span>
+                    <span class="product-price">Rp 20.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">13 hari</span>
+                    <span class="product-price">Rp 22.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">15 hari</span>
+                    <span class="product-price">Rp 24.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">17 hari</span>
+                    <span class="product-price">Rp 26.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">19 hari</span>
+                    <span class="product-price">Rp 28.000</span>
+                </li>
+            </ul>
+
+            <h3 class="product-category">Anggota XXL (65GB)</h3>
+            <ul>
+                <li class="product-item">
+                    <span class="product-name">3 hari</span>
+                    <span class="product-price">Rp 9.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">5 hari</span>
+                    <span class="product-price">Rp 13.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">7 hari</span>
+                    <span class="product-price">Rp 15.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">9 hari</span>
+                    <span class="product-price">Rp 17.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">11 hari</span>
+                    <span class="product-price">Rp 19.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">13 hari</span>
+                    <span class="product-price">Rp 21.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">15 hari</span>
+                    <span class="product-price">Rp 23.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">17 hari</span>
+                    <span class="product-price">Rp 25.000</span>
+                </li>
+                <li class="product-item">
+                    <span class="product-name">19 hari</span>
+                    <span class="product-price">Rp 27.000</span>
+                </li>
+            </ul>
+        </main>
+
+        <footer class="footer-cta">
+            <a href="http://wa.me/6289667881288?text=order" class="whatsapp-link">
+                HUBUNGI ADMIN
+            </a>
+        </footer>
+    </div>
+</body>
+</html>
