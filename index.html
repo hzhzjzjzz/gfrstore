@@ -2,653 +2,421 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Harga Produk - GFR Store</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Anhtronik Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
         :root {
-            --primary-color: #00bfff;
-            --accent-color: #25d366;
-            --bg-color: #0a0a0a;
-            --bg-secondary: #1a1a1a;
-            --text-color: #ffffff;
-            --text-secondary: #bbb;
-            --border-color: #333;
-            --highlight-color: #ffd700;
-            --gradient-1: #0f2027;
-            --gradient-2: #2c5364;
-            --gradient-glow: rgba(0,191,255,0.45);
-            --card-bg: rgba(255,255,255,0.07);
-            --neon-shadow: 0 0 12px #00bfff, 0 0 24px #25d36688;
+            --primary: #4a6cfa;
+            --primary-dark: #3249b3;
+            --bg-color: #f5f7ff;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-sub: #636e72;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --radius: 15px;
+            --bottom-nav-height: 70px;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(120deg, var(--gradient-1), var(--bg-color) 40%, var(--gradient-2));
-            color: var(--text-color);
-            min-height: 100vh;
-            background-attachment: fixed;
-            position: relative;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding-bottom: calc(var(--bottom-nav-height) + 20px);
         }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 28px 8px 18px 8px;
-        }
-        /* --- Contact Top Bar --- */
-        .contact-note-row {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 18px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        .contact-top {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-        .contact-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(90deg, #25d366 60%, #00bfff 100%);
-            color: #fff;
-            padding: 15px 26px;
-            font-size: 1.08em;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 16px;
-            box-shadow: var(--neon-shadow);
-            border: none;
-            cursor: pointer;
-            letter-spacing: 1px;
-            transition: transform 0.2s, box-shadow 0.2s, background 0.2s, filter 0.2s;
-            filter: brightness(1.05);
-            animation: pulse 2.6s infinite;
-        }
-        .contact-btn:hover {
-            transform: translateY(-3px) scale(1.04) rotate(-2deg);
-            box-shadow: 0 7px 36px #25d36699, 0 0 24px #00bfff88;
-            background: linear-gradient(90deg, #25d366 50%, #00bfff 100%);
-            color: #fff;
-            filter: brightness(1.1);
-        }
-        .contact-btn.tg {
-            background: linear-gradient(90deg, #229ED9 50%, #00bfff 100%);
-            box-shadow: 0 0 18px #229ED977, 0 0 24px #00bfff38;
-            animation-delay: 0.5s;
-        }
-        .contact-btn.tg:hover {
-            background: linear-gradient(90deg, #00bfff 60%, #229ED9 100%);
-        }
-        .contact-btn.ig {
-            background: linear-gradient(90deg, #fd5949 45%, #d6249f 80%, #285AEB 100%);
-            box-shadow: 0 0 18px #fd594977, 0 0 24px #d6249f38;
-            animation-delay: 1s;
-        }
-        .contact-btn.ig:hover {
-            background: linear-gradient(90deg, #d6249f 30%, #fd5949 70%, #285AEB 100%);
-        }
-        @keyframes pulse {
-            0% { box-shadow: var(--neon-shadow); }
-            50% { box-shadow: 0 0 30px #00bfff, 0 0 48px #25d366cc; }
-            100% { box-shadow: var(--neon-shadow); }
-        }
-        .whatsapp-link .wa-ico,
-        .contact-btn .icon {
-            font-size: 1.28em;
-            vertical-align: -1px;
-        }
-        .contact-note {
-            flex: 1 1 200px;
-            color: #ffd700;
-            font-size: 1.03em;
-            font-weight: 600;
-            background: rgba(0, 0, 0, 0.18);
-            padding: 11px 22px 11px 15px;
-            border-radius: 12px;
-            border-left: 4px solid #ffd700;
-            box-shadow: 0 2px 14px #ffd70013;
-            margin-top: 3px;
-            min-width: 210px;
-            max-width: 410px;
-            line-height: 1.5;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            animation: fadeInGlow 1.2s;
-        }
-        .contact-note i {
-            color: #ffd700;
-            font-size: 1.2em;
-        }
+
         /* --- HEADER --- */
         .header {
-            text-align: center;
-            padding: 32px 0 20px 0;
-            border-bottom: 2px solid var(--border-color);
-            margin-bottom: 36px;
-            position: relative;
+            background: linear-gradient(135deg, var(--primary), #6c5ce7);
+            padding: 20px 20px 60px 20px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(74, 108, 250, 0.3);
         }
-        .header h1 {
-            font-size: 2.9em;
-            color: var(--primary-color);
-            letter-spacing: 2.5px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-shadow: 0 4px 38px #00bfff24, 0 2px 12px #25d3662a;
+        
+        .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .user-info h2 { font-size: 18px; font-weight: 600; }
+        .user-info p { font-size: 12px; opacity: 0.9; }
+        .header-icons i { font-size: 20px; margin-left: 15px; cursor: pointer; }
+
+        /* --- BANNER --- */
+        .banner-container {
+            margin-top: -40px;
+            padding: 0 20px;
+        }
+        .banner {
+            background: linear-gradient(45deg, #00b894, #00cec9);
+            border-radius: var(--radius);
+            padding: 20px;
+            color: white;
+            box-shadow: var(--shadow);
             display: flex;
             align-items: center;
-            gap: 14px;
-            justify-content: center;
+            justify-content: space-between;
         }
-        .header .subtitle {
-            font-size: 1.22em;
-            color: var(--highlight-color);
-            font-weight: 600;
-            margin-bottom: 9px;
-            letter-spacing: 1px;
-            text-shadow: 0 2px 22px #ffd70040;
+        .banner-text h3 { font-size: 16px; margin-bottom: 5px; }
+        .banner-text p { font-size: 12px; opacity: 0.9; }
+        .banner-icon { font-size: 40px; opacity: 0.8; }
+
+        /* --- CATEGORY --- */
+        .category-scroll {
             display: flex;
-            gap: 7px;
-            align-items: center;
-            justify-content: center;
-            animation: fadeInGlow 2s ease-in-out;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 20px;
+            scrollbar-width: none;
         }
-        @keyframes fadeInGlow {
-            0% { opacity: 0; text-shadow: none; }
-            100% { opacity: 1; text-shadow: 0 2px 22px #ffd70040; }
-        }
-        .header p {
-            font-size: 1.09em;
-            color: var(--text-secondary);
-            margin-bottom: 6px;
-        }
-        .info-stok {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: linear-gradient(90deg, #222e42 0%, #255e77 100%);
-            color: var(--highlight-color);
-            padding: 13px 20px;
+        .category-scroll::-webkit-scrollbar { display: none; }
+        
+        .cat-item {
+            min-width: 80px;
+            background: var(--card-bg);
+            padding: 10px;
             border-radius: 12px;
-            font-size: 1.09em;
-            margin: 19px 0 0 0;
-            box-shadow: 0 8px 26px rgba(0,0,0,0.13), 0 0 14px #ffd7000a;
-            font-weight: 600;
-            transition: box-shadow 0.2s, background 0.2s;
-        }
-        .info-stok:hover {
-            box-shadow: 0 12px 38px #00bfff22;
-            background: linear-gradient(90deg, #255e77 0%, #192433 100%);
-        }
-        .info-stok a {
-            color: var(--accent-color);
-            text-decoration: underline dashed;
-            transition: color 0.2s;
-            font-size: 1.08em;
-            font-weight: 600;
-        }
-        .info-stok a:hover {
-            color: var(--primary-color);
-            text-decoration: underline solid;
-        }
-        .info-stok .icon {
-            font-size: 1.3em;
-        }
-        .area-link-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 16px;
-            margin-bottom: 0;
-        }
-        .area-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            background: linear-gradient(90deg, #00bfff 50%, #25d366 100%);
-            color: #fff;
-            padding: 11px 28px;
-            font-size: 1.09em;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 13px;
-            box-shadow: 0 2px 18px #00bfff25;
-            border: none;
+            text-align: center;
+            box-shadow: var(--shadow);
             cursor: pointer;
-            letter-spacing: 0.5px;
-            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            transition: 0.2s;
+            border: 1px solid transparent;
         }
-        .area-link:hover {
-            transform: translateY(-2px) scale(1.05) rotate(1deg);
-            box-shadow: 0 7px 26px #25d36644, 0 0 16px #00bfff33;
-            background: linear-gradient(90deg, #25d366 60%, #00bfff 100%);
-            color: #fff;
-        }
-        .area-link .area-ico {
-            font-size: 1.22em;
-            vertical-align: -2px;
-        }
-        /* --- PRODUK LIST CONTAINER --- */
-        .product-list-container {
-            background: transparent;
-            border: none;
-            box-shadow: none;
-            padding: 0;
-            margin-top: 30px;
-            animation: fadeIn 1.1s;
-        }
-        .product-category {
-            font-size: 1.75em;
-            font-weight: 700;
-            color: var(--primary-color);
-            border-bottom: 2.5px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin: 30px 0 24px 0;
-            letter-spacing: 0.5px;
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-        .product-category i {
-            color: var(--accent-color);
-            font-size: 1.15em;
-        }
-        /* --- NEW PRODUCT CARD DESIGN --- */
+        .cat-item.active { border-color: var(--primary); background: #eef2ff; }
+        .cat-item i { font-size: 20px; color: var(--primary); margin-bottom: 5px; display: block; }
+        .cat-item span { font-size: 11px; font-weight: 500; color: var(--text-sub); }
+
+        /* --- PRODUCT GRID --- */
+        .section-title { padding: 0 20px; font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+        
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 0 20px;
         }
+
         .product-card {
             background: var(--card-bg);
-            border: 1.5px solid var(--border-color);
-            border-radius: 18px;
-            padding: 20px;
+            border-radius: var(--radius);
+            padding: 15px;
+            box-shadow: var(--shadow);
             display: flex;
             flex-direction: column;
-            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
-        }
-        .product-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--primary-color);
-            box-shadow: 0 10px 40px var(--gradient-glow);
-        }
-        .card-header {
-            display: flex;
             justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 12px;
-            margin-bottom: 14px;
+            transition: 0.2s;
         }
-        .card-code {
-            font-size: 1.4em;
-            font-weight: 700;
-            color: var(--text-color);
-        }
-        .card-price {
-            font-size: 1.25em;
-            font-weight: 700;
-            color: var(--accent-color);
-            background: rgba(37, 211, 102, 0.1);
-            padding: 5px 12px;
+        .product-card:active { transform: scale(0.98); }
+
+        .prod-icon {
+            width: 40px; height: 40px;
+            background: #eef2ff;
             border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 10px;
         }
-        .card-areas {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            font-size: 1.05em;
+        .prod-name { font-size: 14px; font-weight: 600; margin-bottom: 5px; line-height: 1.3; }
+        .prod-desc { font-size: 10px; color: var(--text-sub); margin-bottom: 10px; }
+        .prod-price { font-size: 14px; font-weight: 700; color: var(--primary); }
+        .btn-buy {
+            margin-top: 10px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
         }
-        .card-areas li {
-            display: flex;
-            justify-content: space-between;
-        }
-        .card-areas li span {
-            color: var(--text-secondary);
-            margin-right: 10px;
-        }
-        /* --- PEMBAYARAN --- */
-        .pembayaran-section {
-            margin: 48px auto 0 auto;
-            padding: 26px 20px 18px 20px;
-            background: var(--card-bg);
-            border: 1.5px solid var(--accent-color);
-            border-radius: 18px;
-            max-width: 450px;
-            box-shadow: 0 2px 18px #00bfff25;
-            color: #fff;
+
+        /* --- PAGES (Hide/Show) --- */
+        .page { display: none; animation: fadeIn 0.3s; }
+        .page.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- PROFILE PAGE --- */
+        .profile-header {
             text-align: center;
-            animation: fadeInUp 1.3s;
+            padding: 40px 20px;
+            background: var(--card-bg);
+            margin: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
         }
-        .pembayaran-section h2 {
-            color: var(--primary-color);
-            font-size: 1.37em;
-            font-weight: 700;
-            margin-bottom: 14px;
-            letter-spacing: 0.5px;
+        .avatar {
+            width: 80px; height: 80px;
+            background: #dfe6e9;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px; color: #b2bec3;
         }
-        .pembayaran-list {
-            margin-bottom: 15px;
-            font-size: 1.11em;
+        .menu-list { padding: 0 20px; }
+        .menu-item {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+        }
+        .menu-left { display: flex; align-items: center; gap: 15px; font-size: 14px; }
+        .menu-left i { width: 20px; color: var(--primary); }
+
+        /* --- BOTTOM NAV --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: var(--card-bg);
+            height: var(--bottom-nav-height);
             display: flex;
-            flex-direction: column;
-            gap: 2px;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            z-index: 999;
         }
-        .pembayaran-list span {
-            font-weight: 700;
-            color: var(--accent-color);
+        .nav-item {
+            text-align: center;
+            color: #b2bec3;
+            font-size: 10px;
+            cursor: pointer;
+            width: 60px;
         }
-        .qris-title {
-            margin: 8px 0 4px 0;
-            font-size: 1.09em;
-            color: var(--highlight-color);
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-        .qris-link {
-            display: inline-block;
-            margin: 7px 0 0 0;
-            color: #00bfff;
-            text-decoration: underline dotted;
-            font-weight: 600;
-            font-size: 1em;
-            transition: color 0.18s;
-            word-break: break-all;
-        }
-        .qris-link:hover {
-            color: #25d366;
-            text-decoration: underline solid;
-        }
-        .qris-img {
-            margin: 12px 0 0 0;
-            width: 180px;
-            max-width: 93vw;
-            border-radius: 11px;
-            border: 1.5px solid var(--border-color);
-            box-shadow: 0 3px 16px #00bfff12;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(45px);}
-            100% { opacity: 1; transform: translateY(0);}
-        }
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(80px);}
-            100% { opacity: 1; transform: translateY(0);}
-        }
-        @media (max-width: 900px) {
-          .contact-note-row {
-            flex-direction: column;
-            align-items: stretch;
-            gap: 10px;
-          }
-          .contact-top {
-            justify-content: flex-start;
-          }
-        }
-        @media (max-width: 600px) {
-            .container { padding: 8px 2px 7px 2px; }
-            .header h1 { font-size: 1.45em; }
-            .header .subtitle { font-size: 1em; }
-            .product-category { font-size: 1.3em; }
-            .product-grid { grid-template-columns: 1fr; gap: 16px; }
-            .product-card { padding: 16px; }
-            .footer-cta { margin-top: 32px; }
-            .area-link-box { margin-top: 10px; }
-            .area-link { padding: 8px 9px; font-size: 0.95em; }
-            .pembayaran-section { padding: 10px 3px 11px 3px; max-width: 97vw; }
-            .qris-img { width: 99vw; max-width: 99vw; }
-            .contact-note { max-width: 99vw; padding: 9px 8px 9px 10px; font-size: 0.93em;}
-        }
+        .nav-item i { font-size: 20px; margin-bottom: 5px; display: block; }
+        .nav-item.active { color: var(--primary); font-weight: 600; }
     </style>
 </head>
 <body>
-    <div class="container fade-in">
-        <div class="contact-note-row">
-            <div class="contact-top">
-                <a href="http://wa.me/6289667881288?text=order" class="contact-btn" target="_blank" title="Hubungi Admin WhatsApp">
-                    <span class="icon"><i class="fab fa-whatsapp"></i></span> WhatsApp
-                </a>
-                <a href="https://t.me/FarGifar" class="contact-btn tg" target="_blank" title="Hubungi via Telegram">
-                    <span class="icon"><i class="fab fa-telegram-plane"></i></span> Telegram
-                </a>
-                <a href="https://instagram.com/muhammadalghiifarii" class="contact-btn ig" target="_blank" title="Kunjungi Instagram">
-                    <span class="icon"><i class="fab fa-instagram"></i></span> Instagram
-                </a>
-            </div>
-            <div class="contact-note">
-                <i class="fa-solid fa-circle-exclamation"></i>
-                <span>
-                    <b>Note:</b> WhatsApp tidak aktif = kena blokir/tidak bisa balas.<br>
-                    Silahkan hubungi ke <b>Telegram</b> atau <b>Instagram</b>.
-                </span>
+
+    <div id="home-page" class="page active">
+        <div class="header">
+            <div class="header-top">
+                <div class="user-info">
+                    <p>Selamat Datang,</p>
+                    <h2 id="store-name-display">Anhtronik Store</h2>
+                </div>
+                <div class="header-icons">
+                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
             </div>
         </div>
-        <header class="header">
-            <h1>
-                <span><i class="fa-solid fa-cash-register"></i></span>
-                DAFTAR HARGA PRODUK
-                <span><i class="fa-solid fa-store"></i></span>
-            </h1>
-            <div class="subtitle">
-                <i class="fa-solid fa-bolt"></i>
-                Harga selalu update & stok <b>otomatis</b>
-            </div>
-            <div class="info-stok">
-                <span class="icon"><i class="fa-solid fa-circle-info"></i></span>
-                <span>Info stok & pengumuman:</span>
-                <a href="https://xlstokinfo.pages.dev/" target="_blank">
-                    👉KLIK INI UNTUK CEK STOCK REAL TIME 👍🗿
-                </a>
-            </div>
-            <div class="area-link-box">
-                <a href="https://cekareaxl.vercel.app/" class="area-link" target="_blank">
-                    <span class="area-ico"><i class="fa-solid fa-globe"></i></span>
-                    Cek Area AXIS & XL Anda di sini
-                </a>
-            </div>
-        </header>
 
-        <main class="product-list-container">
-            <h3 class="product-category"><i class="fa-solid fa-wifi"></i> Paket Xtra Kuota (XDA)</h3>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="card-header">
-                        <span class="card-code">XDA13</span>
-                        <span class="card-price">Rp 45.750</span>
-                    </div>
-                    <ul class="card-areas">
-                        <li><span>Area 1:</span> 13GB</li>
-                        <li><span>Area 2:</span> 15GB</li>
-                        <li><span>Area 3:</span> 20GB</li>
-                        <li><span>Area 4:</span> 30GB</li>
-                    </ul>
+        <div class="banner-container">
+            <div class="banner">
+                <div class="banner-text">
+                    <h3>Paket Data Murah</h3>
+                    <p>Diskon spesial hari ini!</p>
                 </div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <span class="card-code">XDA19</span>
-                        <span class="card-price">Rp 49.390</span>
-                    </div>
-                    <ul class="card-areas">
-                        <li><span>Area 1:</span> 19GB</li>
-                        <li><span>Area 2:</span> 21GB</li>
-                        <li><span>Area 3:</span> 26GB</li>
-                        <li><span>Area 4:</span> 36GB</li>
-                    </ul>
-                </div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <span class="card-code">XDA25</span>
-                        <span class="card-price">Rp 53.461</span>
-                    </div>
-                    <ul class="card-areas">
-                        <li><span>Area 1:</span> 25GB</li>
-                        <li><span>Area 2:</span> 27GB</li>
-                        <li><span>Area 3:</span> 32GB</li>
-                        <li><span>Area 4:</span> 42GB</li>
-                    </ul>
-                </div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <span class="card-code">XDA27</span>
-                        <span class="card-price">Rp 69.671</span>
-                    </div>
-                    <ul class="card-areas">
-                        <li><span>Area 1:</span> 26GB</li>
-                        <li><span>Area 2:</span> 30GB</li>
-                        <li><span>Area 3:</span> 44GB</li>
-                        <li><span>Area 4:</span> 83GB</li>
-                    </ul>
-                </div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <span class="card-code">XDA31</span>
-                        <span class="card-price">Rp 58.391</span>
-                    </div>
-                    <ul class="card-areas">
-                        <li><span>Area 1:</span> 31GB</li>
-                        <li><span>Area 2:</span> 33GB</li>
-                        <li><span>Area 3:</span> 38GB</li>
-                        <li><span>Area 4:</span> 48GB</li>
-                    </ul>
-                </div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <span class="card-code">XDA34</span>
-                        <span class="card-price">Rp 74.749</span>
-                    </div>
-                    <ul class="card-areas">
-                        <li><span>Area 1:</span> 33GB</li>
-                        <li><span>Area 2:</span> 36GB</li>
-                        <li><span>Area 3:</span> 47GB</li>
-                        <li><span>Area 4:</span> 71GB</li>
-                    </ul>
-                </div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <span class="card-code">XDA38</span>
-                        <span class="card-price">Rp 62.230</span>
-                    </div>
-                    <ul class="card-areas">
-                        <li><span>Area 1:</span> 38GB</li>
-                        <li><span>Area 2:</span> 40GB</li>
-                        <li><span>Area 3:</span> 45GB</li>
-                        <li><span>Area 4:</span> 55GB</li>
-                    </ul>
-                </div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <span class="card-code">XDA47</span>
-                        <span class="card-price">Rp 67.591</span>
-                    </div>
-                    <ul class="card-areas">
-                        <li><span>Area 1:</span> 47GB</li>
-                        <li><span>Area 2:</span> 49GB</li>
-                        <li><span>Area 3:</span> 54GB</li>
-                        <li><span>Area 4:</span> 64GB</li>
-                    </ul>
-                </div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <span class="card-code">XDA55</span>
-                        <span class="card-price">Rp 72.751</span>
-                    </div>
-                    <ul class="card-areas">
-                        <li><span>Area 1:</span> 54GB</li>
-                        <li><span>Area 2:</span> 56GB</li>
-                        <li><span>Area 3:</span> 61GB</li>
-                        <li><span>Area 4:</span> 71GB</li>
-                    </ul>
-                </div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <span class="card-code">XDA63</span>
-                        <span class="card-price">Rp 77.972</span>
-                    </div>
-                    <ul class="card-areas">
-                        <li><span>Area 1:</span> 63GB</li>
-                        <li><span>Area 2:</span> 65GB</li>
-                        <li><span>Area 3:</span> 70GB</li>
-                        <li><span>Area 4:</span> 80GB</li>
-                    </ul>
-                </div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <span class="card-code">XDA64</span>
-                        <span class="card-price">Rp 89.066</span>
-                    </div>
-                    <ul class="card-areas">
-                        <li><span>Area 1:</span> 65GB</li>
-                        <li><span>Area 2:</span> 70GB</li>
-                        <li><span>Area 3:</span> 83GB</li>
-                        <li><span>Area 4:</span> 123GB</li>
-                    </ul>
-                </div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <span class="card-code">XDA76</span>
-                        <span class="card-price">Rp 85.751</span>
-                    </div>
-                    <ul class="card-areas">
-                        <li><span>Area 1:</span> 76GB</li>
-                        <li><span>Area 2:</span> 78GB</li>
-                        <li><span>Area 3:</span> 83GB</li>
-                        <li><span>Area 4:</span> 93GB</li>
-                    </ul>
-                </div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <span class="card-code">XDA88</span>
-                        <span class="card-price">Rp 96.060</span>
-                    </div>
-                    <ul class="card-areas">
-                        <li><span>Area 1:</span> 88GB</li>
-                        <li><span>Area 2:</span> 90GB</li>
-                        <li><span>Area 3:</span> 95GB</li>
-                        <li><span>Area 4:</span> 105GB</li>
-                    </ul>
-                </div>
-                <div class="product-card">
-                    <div class="card-header">
-                        <span class="card-code">XDA105</span>
-                        <span class="card-price">Rp 123.610</span>
-                    </div>
-                    <ul class="card-areas">
-                        <li><span>Area 1:</span> 105GB</li>
-                        <li><span>Area 2:</span> 110GB</li>
-                        <li><span>Area 3:</span> 123GB</li>
-                        <li><span>Area 4:</span> 163GB</li>
-                    </ul>
+                <div class="banner-icon">
+                    <i class="fas fa-percent"></i>
                 </div>
             </div>
-        </main>
-        
-        <section class="pembayaran-section">
-            <h2><i class="fa-solid fa-money-bill-wave"></i> Pembayaran</h2>
-            <div class="pembayaran-list">
-                <div><span>Seabank</span>: 901229356584</div>
-                <div><span>Dana</span>: 089667881288</div>
+        </div>
+
+        <div class="category-scroll">
+            <div class="cat-item active" onclick="filterCategory('all')">
+                <i class="fas fa-th-large"></i>
+                <span>Semua</span>
             </div>
-            <div class="qris-title">[ <b>QRIS ALL PAYMENT</b> ]</div>
-            <div style="font-size:0.98em; color:#ffd700; margin:5px 0 3px 0;">
-                Cara pakai: klik link di bawah lalu screenshot dan scan di aplikasi E-wallet anda
+            <div class="cat-item" onclick="filterCategory('xl')">
+                <i class="fas fa-bolt"></i>
+                <span>XL/Axis</span>
             </div>
-            <a href="https://imgtolinkx.com/i/CBrqVNuT" class="qris-link" target="_blank">
-                https://imgtolinkx.com/i/CBrqVNuT
-            </a>
-            <br>
-            <img class="qris-img" src="https://imgtolinkx.com/i/CBrqVNuT" alt="QRIS ALL PAYMENT">
-        </section>
+            <div class="cat-item" onclick="filterCategory('game')">
+                <i class="fas fa-gamepad"></i>
+                <span>Games</span>
+            </div>
+        </div>
+
+        <h3 class="section-title">Produk Terlaris</h3>
+        <div class="product-grid" id="product-list">
+            </div>
     </div>
+
+    <div id="profile-page" class="page">
+        <div class="header" style="padding-bottom: 20px; border-radius: 0 0 20px 20px;">
+            <h2 style="text-align: center;">Profil Toko</h2>
+        </div>
+        
+        <div class="profile-header">
+            <div class="avatar"><i class="fas fa-user"></i></div>
+            <h3 id="profile-name">Admin Anhtronik</h3>
+            <p id="profile-number" style="font-size: 12px; color: #888;">089667881288</p>
+        </div>
+
+        <div class="menu-list">
+            <div class="menu-item" onclick="contactWa()">
+                <div class="menu-left">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Hubungi WhatsApp</span>
+                </div>
+                <i class="fas fa-chevron-right" style="font-size: 12px; color: #ccc;"></i>
+            </div>
+            <div class="menu-item" onclick="contactTele()">
+                <div class="menu-left">
+                    <i class="fab fa-telegram"></i>
+                    <span>Telegram Channel</span>
+                </div>
+                <i class="fas fa-chevron-right" style="font-size: 12px; color: #ccc;"></i>
+            </div>
+            <div class="menu-item" onclick="contactEmail()">
+                <div class="menu-left">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email Support</span>
+                </div>
+                <i class="fas fa-chevron-right" style="font-size: 12px; color: #ccc;"></i>
+            </div>
+            <div class="menu-item">
+                <div class="menu-left">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Tentang Aplikasi</span>
+                </div>
+                <i class="fas fa-chevron-right" style="font-size: 12px; color: #ccc;"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <div class="nav-item active" onclick="switchPage('home', this)">
+            <i class="fas fa-home"></i>
+            <span>Beranda</span>
+        </div>
+        <div class="nav-item" onclick="switchPage('history', this)">
+            <i class="fas fa-history"></i>
+            <span>Riwayat</span>
+        </div>
+        <div class="nav-item" onclick="switchPage('profile', this)">
+            <i class="fas fa-user"></i>
+            <span>Profil</span>
+        </div>
+    </div>
+
+    <script>
+        // --- KONFIGURASI DATA ANDA (EDIT DISINI) ---
+        const config = {
+            storeName: "Anhtronik Store",
+            adminName: "Admin Anhtronik",
+            whatsapp: "6289667881288", // Format 628xxx
+            telegram: "username_telegram_anda", // Ganti username telegram
+            email: "email_anda@gmail.com" // Ganti email
+        };
+
+        // --- DATA PRODUK (SESUAI REQUEST XDA) ---
+        const products = [
+            { name: "XDA13 / SUPERMINI", price: 45000, type: "xl", detail: "Area1: 13GB, Area2: 15GB, Area3: 20GB" },
+            { name: "XDA19", price: 50000, type: "xl", detail: "Area1: 19GB, Area2: 21GB, Area3: 26GB" },
+            { name: "XDA25", price: 54000, type: "xl", detail: "Area1: 25GB, Area2: 27GB, Area3: 32GB" },
+            { name: "XDA31 / MINI", price: 58000, type: "xl", detail: "Area1: 31GB, Area2: 33GB, Area3: 38GB" },
+            { name: "XDA38 / BIG", price: 63000, type: "xl", detail: "Area1: 38GB, Area2: 40GB, Area3: 45GB" },
+            { name: "XDA50 / JUMBO V2", price: 72000, type: "xl", detail: "Area1: 50GB, Area2: 52GB, Area3: 57GB" },
+            { name: "XDA63", price: 84000, type: "xl", detail: "Area1: 63GB, Area2: 65GB, Area3: 70GB" },
+            { name: "XDA76", price: 92000, type: "xl", detail: "Area1: 76GB, Area2: 78GB, Area3: 83GB" },
+            { name: "XDA88 / MEGABIG", price: 97000, type: "xl", detail: "Area1: 88GB, Area2: 90GB, Area3: 95GB" }
+        ];
+
+        // --- INISIALISASI HALAMAN ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set Info Profil
+            document.getElementById('store-name-display').innerText = config.storeName;
+            document.getElementById('profile-name').innerText = config.adminName;
+            document.getElementById('profile-number').innerText = "+" + config.whatsapp;
+
+            renderProducts(products);
+        });
+
+        // --- RENDER PRODUK ---
+        function renderProducts(data) {
+            const container = document.getElementById('product-list');
+            container.innerHTML = '';
+
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                
+                // Format Rupiah
+                const formattedPrice = "Rp " + item.price.toLocaleString('id-ID');
+                
+                card.innerHTML = `
+                    <div>
+                        <div class="prod-icon"><i class="fas fa-signal"></i></div>
+                        <div class="prod-name">${item.name}</div>
+                        <div class="prod-desc">${item.detail.substring(0, 40)}...</div>
+                    </div>
+                    <div>
+                        <div class="prod-price">${formattedPrice}</div>
+                        <button class="btn-buy" onclick="buyProduct('${item.name}', ${item.price})">Beli Sekarang</button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // --- FUNGSI FILTER KATEGORI ---
+        function filterCategory(type) {
+            // Update UI tombol active
+            document.querySelectorAll('.cat-item').forEach(el => el.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            if (type === 'all') {
+                renderProducts(products);
+            } else {
+                const filtered = products.filter(p => p.type === type);
+                renderProducts(filtered);
+            }
+        }
+
+        // --- FUNGSI BELI KE WA ---
+        function buyProduct(name, price) {
+            const message = `Halo Admin ${config.storeName}, saya mau order:\n\n` +
+                            `📦 *Produk:* ${name}\n` +
+                            `💰 *Harga:* Rp ${price.toLocaleString('id-ID')}\n\n` +
+                            `Payment kemana?`;
+            
+            const url = `https://wa.me/${config.whatsapp}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // --- NAVIGASI HALAMAN ---
+        function switchPage(pageId, navElement) {
+            // Sembunyikan semua halaman
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            
+            // Tampilkan halaman yang dipilih
+            if (pageId === 'home') document.getElementById('home-page').classList.add('active');
+            if (pageId === 'profile') document.getElementById('profile-page').classList.add('active');
+            
+            // Khusus halaman riwayat (Dummy)
+            if (pageId === 'history') {
+                alert("Fitur Riwayat Transaksi belum tersedia di demo ini.");
+                return; 
+            }
+
+            // Update Navigasi Bawah
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            navElement.classList.add('active');
+        }
+
+        // --- FUNGSI KONTAK PROFIL ---
+        function contactWa() {
+            window.open(`https://wa.me/${config.whatsapp}`, '_blank');
+        }
+        function contactTele() {
+            window.open(`https://t.me/${config.telegram}`, '_blank');
+        }
+        function contactEmail() {
+            window.location.href = `mailto:${config.email}`;
+        }
+
+    </script>
 </body>
-                                              </html>
+    </html>
