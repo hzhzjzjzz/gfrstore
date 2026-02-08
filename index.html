@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Anhtronik Store</title>
+    <title>GFROFFICIALSTORE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
@@ -202,7 +202,7 @@
             <div class="header-top">
                 <div class="user-info">
                     <p>Selamat Datang,</p>
-                    <h2 id="store-name-display">Anhtronik Store</h2>
+                    <h2 id="store-name-display">GFROFFICIALSTORE</h2>
                 </div>
                 <div class="header-icons">
                     <i class="fas fa-bell"></i>
@@ -250,7 +250,7 @@
         
         <div class="profile-header">
             <div class="avatar"><i class="fas fa-user"></i></div>
-            <h3 id="profile-name">Admin Anhtronik</h3>
+            <h3 id="profile-name">Admin GFR</h3>
             <p id="profile-number" style="font-size: 12px; color: #888;">089667881288</p>
         </div>
 
@@ -302,16 +302,16 @@
     </div>
 
     <script>
-        // --- KONFIGURASI DATA ANDA (EDIT DISINI) ---
+        // --- KONFIGURASI DATA UTAMA ---
         const config = {
-            storeName: "Anhtronik Store",
-            adminName: "Admin Anhtronik",
-            whatsapp: "6289667881288", // Format 628xxx
-            telegram: "username_telegram_anda", // Ganti username telegram
-            email: "email_anda@gmail.com" // Ganti email
+            storeName: "GFROFFICIALSTORE",
+            adminName: "Admin GFROFFICIALSTORE",
+            whatsapp: "6289667881288", // Nomor WA Anda
+            telegram: "username_telegram_anda", 
+            email: "email_anda@gmail.com" 
         };
 
-        // --- DATA PRODUK (SESUAI REQUEST XDA) ---
+        // --- DATA PRODUK ---
         const products = [
             { name: "XDA13 / SUPERMINI", price: 45000, type: "xl", detail: "Area1: 13GB, Area2: 15GB, Area3: 20GB" },
             { name: "XDA19", price: 50000, type: "xl", detail: "Area1: 19GB, Area2: 21GB, Area3: 26GB" },
@@ -326,11 +326,9 @@
 
         // --- INISIALISASI HALAMAN ---
         document.addEventListener('DOMContentLoaded', () => {
-            // Set Info Profil
             document.getElementById('store-name-display').innerText = config.storeName;
             document.getElementById('profile-name').innerText = config.adminName;
             document.getElementById('profile-number').innerText = "+" + config.whatsapp;
-
             renderProducts(products);
         });
 
@@ -342,8 +340,6 @@
             data.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'product-card';
-                
-                // Format Rupiah
                 const formattedPrice = "Rp " + item.price.toLocaleString('id-ID');
                 
                 card.innerHTML = `
@@ -361,9 +357,8 @@
             });
         }
 
-        // --- FUNGSI FILTER KATEGORI ---
+        // --- FILTER KATEGORI ---
         function filterCategory(type) {
-            // Update UI tombol active
             document.querySelectorAll('.cat-item').forEach(el => el.classList.remove('active'));
             event.currentTarget.classList.add('active');
 
@@ -375,7 +370,7 @@
             }
         }
 
-        // --- FUNGSI BELI KE WA ---
+        // --- BELI VIA WA ---
         function buyProduct(name, price) {
             const message = `Halo Admin ${config.storeName}, saya mau order:\n\n` +
                             `📦 *Produk:* ${name}\n` +
@@ -388,34 +383,24 @@
 
         // --- NAVIGASI HALAMAN ---
         function switchPage(pageId, navElement) {
-            // Sembunyikan semua halaman
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             
-            // Tampilkan halaman yang dipilih
             if (pageId === 'home') document.getElementById('home-page').classList.add('active');
             if (pageId === 'profile') document.getElementById('profile-page').classList.add('active');
             
-            // Khusus halaman riwayat (Dummy)
             if (pageId === 'history') {
-                alert("Fitur Riwayat Transaksi belum tersedia di demo ini.");
+                alert("Fitur Riwayat belum tersedia.");
                 return; 
             }
 
-            // Update Navigasi Bawah
             document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
             navElement.classList.add('active');
         }
 
-        // --- FUNGSI KONTAK PROFIL ---
-        function contactWa() {
-            window.open(`https://wa.me/${config.whatsapp}`, '_blank');
-        }
-        function contactTele() {
-            window.open(`https://t.me/${config.telegram}`, '_blank');
-        }
-        function contactEmail() {
-            window.location.href = `mailto:${config.email}`;
-        }
+        // --- KONTAK PROFIL ---
+        function contactWa() { window.open(`https://wa.me/${config.whatsapp}`, '_blank'); }
+        function contactTele() { window.open(`https://t.me/${config.telegram}`, '_blank'); }
+        function contactEmail() { window.location.href = `mailto:${config.email}`; }
 
     </script>
 </body>
